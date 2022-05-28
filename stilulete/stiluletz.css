@@ -1,0 +1,55 @@
+﻿body {
+}
+
+.valid {
+    color: green;
+    background-color: powderblue;
+}
+
+.invalid {
+    color: red;
+    background-color: powderblue;
+}
+.incurs {
+    color: orange;
+    background-color: powderblue;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.left {
+    left: 0;
+    color:blue;
+    background-color: red;
+}
+
+
+.right {
+    right: 0;
+    color:red;
+    background-color: blue;
+}
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+    .centered img {
+        width: 150px;
+        border-radius: 50%;
+    }
