@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="../stilulete/scoreBoard.css" rel="stylesheet" />
+    <link href="../stilulete/joculetz.css" rel="stylesheet" />
+    <script src="../scriptulete/adaugaBara.js"></script>
+    <script src="../scriptulete/JQuery.js"></script>
+    <title>Jocultezu De Plictiseala</title>
+
+    <style>
+        .centered {
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #000000, #8A2BE2, #8B008B, #00008B);
+            background-size: 700% 700%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="BagamNavBarul"></div>
+    <form action="/">
+        <div class="centered">
+            <button type="button" onclick="start()" class="btn btn-primary btn-lg" style="margin:20px">START!</button>
+            <button type="button" onclick="ramboModeON()" class="btn btn-primary btn-lg" style="margin:20px">SUNT RAMBO!</button>
+            <button id="puncte" type="button" class="btn btn-lg btn-primary" disabled>Scorul tău este: </button>
+        </div>
+        <button type="button" onclick="document.getElementById('id01').style.display = 'block';checkHighScore(getScor())" class="btn btn-primary btn-lg btn-block">LeaderBoard</button>
+        <button type="button" onclick="stergere()" class="btn btn-secondary btn-lg btn-block" style="background-color:black">Resetează Scorul!</button>
+        <div class="centered">
+            <label for="nivel">Alege un nivel de dificultate:</label>
+            <select id="nivel">
+                <option value="1">Usor</option>
+                <option value="2">Mediu</option>
+                <option value="3">Greu</option>
+                <option value="4">Foarte Greu</option>
+            </select>
+        </div>
+
+        <svg height="670" width="1920">
+            <circle id="cerculet" cx="50" cy="50" r="15" stroke="black" stroke-width="3" fill="red" />
+        </svg>
+
+        <script src="../scriptulete/joculetzTest.js"></script>
+    </form>
+
+
+
+
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <div class="centered">
+                    <h2 style="color:black">HighScores</h2>
+
+                    <ol style="color:black" id="highScores"></ol>
+                </div>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="stergereTotal()" class="btn btn-secondary btn-lg btn-block" style="float:right;background-color:green;">Resetează Topul</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-secondary btn-lg btn-block" style="background-color: red;">Cancel</button>
+            </div>
+        </form>
+        </div>
+
+
+</body>
+</html>
